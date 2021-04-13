@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AddCard from './components/AddCard';
+import EditCard from './components/EditCard';
 import Header from './components/Header';
 import KeepCards from './components/KeepCards';
 
@@ -48,7 +49,8 @@ function App() {
   ]);
 
   const [showAddCard, setShowAddCard] = useState(false);
-
+  const [showEditCard, setShowEditCard] = useState(false);
+  const [editThisCard, setEditThisCard] = useState({});
   //delete card
   const deleteCard = (id) => {
     setKeepStore(keepStore.filter((keepCard) => keepCard.id !== id));
@@ -62,15 +64,37 @@ function App() {
   //toggle pin
   const togglePin = (id) => {
     let card = keepStore.filter(card => card.id === id);
+    //filter method returns array hence card[0]
     let updatedCard = { ...card[0], pinned: !card[0].pinned };
     setKeepStore([...keepStore.filter(card => card.id !== id), updatedCard]);
+  }
+
+  //edit card
+  const editCard = (id) => {
+    let card = keepStore.filter((card) => card.id === id)[0];
+    editKeepStore(id);
+    setEditThisCard(card);
+    setShowEditCard(true);
+  }
+
+  const editKeepStore = (id) => {
+    setKeepStore(keepStore.filter(card => card.id !== id));
+  }
+
+  const addUpdatedCard = (card) => {
+    setKeepStore([...keepStore, card]);
+  }
+
+  const hideEditCard = () => {
+    setShowEditCard(false);
   }
 
   return (
     <div className="container-all">
       <Header onAdd={() => { setShowAddCard(!showAddCard) }} showAddCard={showAddCard} />
-      {showAddCard && <AddCard onAddCard={addCard} />}
-      <KeepCards keepStore={keepStore} onDelete={deleteCard} onTogglePin={togglePin} />
+      {showAddCard && !showEditCard && <AddCard onAddCard={addCard} />}
+      {showEditCard && <EditCard onHide={hideEditCard} onUpdate={addUpdatedCard} card={editThisCard} />}
+      <KeepCards keepStore={keepStore} onDelete={deleteCard} onTogglePin={togglePin} onEdit={editCard} />
     </div>
   );
 }

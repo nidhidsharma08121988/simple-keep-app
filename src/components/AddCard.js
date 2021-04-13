@@ -15,18 +15,16 @@ const AddCard = ({ onAddCard }) => {
                 text: text
             },
         }
-        //add validation code here 
         onAddCard(card);
         setTitle('');
         setText('');
     }
-
     return (
         <form className="add-card-form" onSubmit={handleSubmit} >
             <input className="form-card-title" type='text' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
             <textarea className='form-card-body' aria-multiline="true" placeholder="Take a note..." value={text} onChange={(e) => setText(e.target.value)}>
             </textarea>
-            <input type="submit" value="Add Card" className=" btn btn-submit" />
+            <input className=" btn btn-submit" type="submit" value="Add Card" />
         </form>
     )
 }

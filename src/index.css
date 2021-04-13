@@ -48,13 +48,31 @@
     height:30px;
     font-weight:700;
   }
+  .btn-cancel{
+    width:100%;
+    border-radius:initial;
+    height:30px;
+    font-weight:700;
+    background-color: red;
+  }
   .keep-cards-container{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-left:5em;
     max-width:100%;
     width:900px;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
+    flex-wrap: wrap;
+  }
+  .keep-cards-pinned{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .keep-cards-unpinned{
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
   }
   .keep-card{
@@ -87,23 +105,27 @@
     flex-direction: row;
     justify-content: center;
   }
-  .add-card-form{
+  .add-card-form, 
+  .edit-card-form{
     display: flex;
     margin-left:5em;
     margin-bottom:2em;
     flex-direction:column;
-    justify-content: top;
-    max-width:70%;
+    justify-content: center;
+    align-items: left;
+    max-width:100%;
     width:auto;
     height:150px;
     box-shadow: 1px 1px 10px grey;
   }
   .form-card-title{
     font-size:1.5em;
+    max-width:100%;
   }
   .form-card-body{
     font-size:1em;
     min-height:100px;
+    max-width:100%;
     border:none;
   }
   
