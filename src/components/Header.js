@@ -4,13 +4,13 @@ const Header = ({ onAdd, showAddCard }) => {
 
     const addCardVisible = () => {
         return (
-            <button className="btn" onClick={onAdd} style={{ backgroundColor: 'maroon', fontSize: '0.8em' }}>
-                <FaMinus className="btn-icon" />
+            <button className="btn" onClick={onAdd} style={{ backgroundColor: 'maroon' }}>
+                <FaMinus className="btn-icon-minus" />
             </button>);
     }
     const addCardNotVisible = () => {
         return (<button className="btn" onClick={onAdd} style={{ backgroundColor: 'steelblue' }}>
-            <BsPlus className="btn-icon" />
+            <BsPlus className="btn-icon-plus" />
         </button>);
     }
 

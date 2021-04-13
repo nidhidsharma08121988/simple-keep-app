@@ -11,7 +11,6 @@ function App() {
         title: 'learning Tasks',
         text: 'Learn following: react, redux, graphQL',
       },
-      reminder: false,
       pinned: false,
     },
     {
@@ -20,8 +19,7 @@ function App() {
         title: 'Remaining work',
         text: 'do following: sell electronic, buy clothes ',
       },
-      reminder: false,
-      pinned: false,
+      pinned: true,
     },
     {
       id: 3,
@@ -29,7 +27,6 @@ function App() {
         title: 'bank',
         text: 'close account, hdfc credit card',
       },
-      reminder: false,
       pinned: false,
     },
     {
@@ -38,8 +35,7 @@ function App() {
         title: 'home',
         text: 'cook, bake, medicine, study',
       },
-      reminder: false,
-      pinned: false,
+      pinned: true,
     },
     {
       id: 5,
@@ -47,22 +43,34 @@ function App() {
         title: 'office',
         text: 'react, javascript, css',
       },
-      reminder: false,
       pinned: false,
     },
   ]);
 
   const [showAddCard, setShowAddCard] = useState(false);
+
   //delete card
   const deleteCard = (id) => {
     setKeepStore(keepStore.filter((keepCard) => keepCard.id !== id));
   }
 
+  //add card
+  const addCard = (card) => {
+    setKeepStore([...keepStore, card]);
+  }
+
+  //toggle pin
+  const togglePin = (id) => {
+    let card = keepStore.filter(card => card.id === id);
+    let updatedCard = { ...card[0], pinned: !card[0].pinned };
+    setKeepStore([...keepStore.filter(card => card.id !== id), updatedCard]);
+  }
+
   return (
     <div className="container-all">
       <Header onAdd={() => { setShowAddCard(!showAddCard) }} showAddCard={showAddCard} />
-      {showAddCard && <AddCard />}
-      <KeepCards keepStore={keepStore} onDelete={deleteCard} />
+      {showAddCard && <AddCard onAddCard={addCard} />}
+      <KeepCards keepStore={keepStore} onDelete={deleteCard} onTogglePin={togglePin} />
     </div>
   );
 }
