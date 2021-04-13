@@ -108,9 +108,10 @@
   .add-card-form, 
   .edit-card-form{
     display: flex;
+    flex-direction:column;
     margin-left:5em;
     margin-bottom:2em;
-    flex-direction:column;
+    margin-top:2em;
     justify-content: center;
     align-items: left;
     max-width:100%;

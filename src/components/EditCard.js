@@ -22,6 +22,10 @@ const EditCard = ({ card, onUpdate, onHide }) => {
 
     }
     const handleCancel = () => {
+        if (!title && !text) {
+            alert('Discarding empty note...');
+            return
+        }
         const updtCard = { ...card };
         onUpdate(updtCard);
         onHide();

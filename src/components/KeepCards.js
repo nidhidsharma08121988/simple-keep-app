@@ -6,10 +6,10 @@ const KeepCards = ({ keepStore, onDelete, onTogglePin, onEdit }) => {
     return (
         <div className="keep-cards-container">
             <div className="keep-cards-pinned">
-                {myKeepStorePinned.map((keepItem) => <KeepCard keepItem={keepItem} onDelete={onDelete} onEdit={onEdit} onTogglePin={onTogglePin} />)}
+                {myKeepStorePinned && myKeepStorePinned.map((keepItem) => <KeepCard keepItem={keepItem} onDelete={onDelete} onEdit={onEdit} onTogglePin={onTogglePin} />)}
             </div>
             <div className="keep-cards-unpinned">
-                {myKeepStoreOthers.map((keepItem) => <KeepCard keepItem={keepItem} onDelete={onDelete} onEdit={onEdit} onTogglePin={onTogglePin} />)}
+                {myKeepStoreOthers && myKeepStoreOthers.map((keepItem) => <KeepCard keepItem={keepItem} onDelete={onDelete} onEdit={onEdit} onTogglePin={onTogglePin} />)}
             </div>
         </div>
     )

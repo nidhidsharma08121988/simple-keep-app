@@ -1,19 +1,36 @@
 {
-  "posts": [
+  "keepStore": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "data": {
+        "title": "learning Tasks",
+        "text": "Learn following: react, redux, graphQL"
+      },
+      "pinned": false
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "data": {
+        "title": "Remaining work",
+        "text": "do following: sell electronic, buy clothes"
+      },
+      "pinned": true
+    },
+    {
+      "data": {
+        "title": "Bank",
+        "text": "credit card"
+      },
+      "pinned": true,
+      "id": 11
+    },
+    {
+      "data": {
+        "title": "Go to swimming",
+        "text": "alternate day"
+      },
+      "pinned": false,
+      "id": 13
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

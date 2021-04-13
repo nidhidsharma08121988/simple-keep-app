@@ -8,14 +8,11 @@ const AddCard = ({ onAddCard }) => {
             alert('Discarding empty card...');
             return
         }
-        let card = {
-            id: Math.floor(Math.random() * 100) + 1,
-            data: {
-                title: title,
-                text: text
-            },
+        let carddata = {
+            title: title,
+            text: text
         }
-        onAddCard(card);
+        onAddCard(carddata);
         setTitle('');
         setText('');
     }
