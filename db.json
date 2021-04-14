@@ -1,14 +1,6 @@
 {
   "keepStore": [
     {
-      "id": 1,
-      "data": {
-        "title": "learning Tasks",
-        "text": "Learn following: react, redux, graphQL"
-      },
-      "pinned": false
-    },
-    {
       "id": 2,
       "data": {
         "title": "Remaining work",
@@ -19,7 +11,7 @@
     {
       "data": {
         "title": "Bank",
-        "text": "credit cards"
+        "text": "new credit card buy\ndeactivate old card"
       },
       "pinned": true,
       "id": 11
@@ -31,6 +23,22 @@
       },
       "pinned": false,
       "id": 13
+    },
+    {
+      "data": {
+        "title": "Meditation",
+        "text": "daily morning"
+      },
+      "pinned": false,
+      "id": 14
+    },
+    {
+      "data": {
+        "title": "Take German Classes",
+        "text": "Everyday 1 hour"
+      },
+      "pinned": true,
+      "id": 15
     }
   ]
 }

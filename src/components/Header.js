@@ -4,7 +4,7 @@ const Header = ({ onAdd, showAddCard }) => {
 
     const addCardVisible = () => {
         return (
-            <button className="btn" onClick={onAdd} style={{ backgroundColor: 'maroon' }}>
+            <button className="btn" onClick={onAdd} style={{ backgroundColor: 'slategrey' }}>
                 <FaMinus className="btn-icon-minus" />
             </button>);
     }

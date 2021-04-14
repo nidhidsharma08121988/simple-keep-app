@@ -46,7 +46,6 @@ function App() {
       body: JSON.stringify(card)
     })
     const data = await res.json();
-    console.log(data);
     setKeepStore([...keepStore, data]);
 
   }
