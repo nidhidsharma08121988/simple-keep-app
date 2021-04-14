@@ -19,7 +19,7 @@
     {
       "data": {
         "title": "Bank",
-        "text": "credit card"
+        "text": "credit cards"
       },
       "pinned": true,
       "id": 11
@@ -27,7 +27,7 @@
     {
       "data": {
         "title": "Go to swimming",
-        "text": "alternate day"
+        "text": "daily"
       },
       "pinned": false,
       "id": 13

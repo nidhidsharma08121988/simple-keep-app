@@ -79,9 +79,17 @@ function App() {
     setKeepStore(keepStore.filter(card => card.id !== id));
   }
 
-  //update keep store
-  const addUpdatedCard = (card) => {
-    setKeepStore([...keepStore, card]);
+  //update keep store when we click save on edit
+  const addUpdatedCard = async (card) => {
+    const res = await fetch(`http://localhost:5000/keepStore/${card.id}`, {
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(card),
+    })
+    const data = await res.json();
+    setKeepStore([...keepStore, data]);
   }
 
   //hide edit card
