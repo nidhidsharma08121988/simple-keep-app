@@ -16,7 +16,7 @@ const Header = ({ onAdd, showAddCard }) => {
 
     return (
         <div className="header-container">
-            <h1>keep App</h1>
+            <h2>keep App</h2>
             { showAddCard && addCardVisible()}
             { !showAddCard && addCardNotVisible()}
         </div>
