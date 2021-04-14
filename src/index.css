@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 *{
   box-sizing: border-box;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Lato, serif;
 };
 
 body{
